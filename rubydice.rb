@@ -5,7 +5,7 @@
 
 
 # Choose how many dice to roll
-puts 'Dice Simulator.'
+puts 'RubyDice'
 puts "How many sides should the dice have?"
 sides = gets.chomp
 puts ''
