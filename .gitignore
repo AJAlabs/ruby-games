@@ -1,0 +1,10 @@
+# .gitignore
+######################
+.DS_Store
+*~
+*.swp
+*.swo
+*.swn
+*.lock
+*.log
+.metadata
