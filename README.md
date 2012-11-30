@@ -1,4 +1,4 @@
-RubyDice is a simple dandom dice generator
+RubyDice is a simple random dice generator
 ========================================= 
 
 It allows you to choose the number of dice and sides before the simulated roll.
