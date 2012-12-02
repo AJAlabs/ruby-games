@@ -1,7 +1,9 @@
+#!/usr/bin/env ruby 
+
 # Copyright (c) 2012 AJ Acevedo http://ajacevedo.com
 # This content is released under the MIT License.
 # http://www.opensource.org/licenses/mit-license.php
-
+# Version: 0.1
 
 
 # Choose how many dice to roll
