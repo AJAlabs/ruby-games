@@ -8,7 +8,7 @@
 
 # Choose how many dice to roll
 puts 'RubyDice'
-puts "How many sides should the dice have?"
+puts 'How many sides should the dice have?'
 sides = gets.chomp
 puts ''
 puts 'How many ' + sides + ' sided dice will you be rolling?'
