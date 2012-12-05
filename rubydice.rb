@@ -3,7 +3,7 @@
 # Copyright (c) 2012 AJ Acevedo | http://ajacevedo.com
 # This content is released under the MIT License.
 # http://www.opensource.org/licenses/mit-license.php
-# Version: 0.1
+# Version: 0.2
 
 
 # Choose how many dice to roll
