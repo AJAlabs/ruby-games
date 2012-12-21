@@ -7,6 +7,7 @@
 
 
 # Choose how many dice to roll
+puts `clear`
 puts 'RubyDice - Let\'s roll some dice!'
 puts 'How many sides should the dice have?'
 sides = gets.chomp
@@ -17,7 +18,7 @@ while sides.empty? do
 end
 while sides =~ /\D/ do
   puts 'Invalid character'
-  puts 'Pleaes specify the number of sides on each dice (ie: 3)'
+  puts 'Please specify the number of sides on each dice (ie: 3)'
   sides = gets.chomp
 end
 puts ''
@@ -30,12 +31,15 @@ while dice.empty? do
 end
 while dice =~ /\D/ do
   puts 'Invalid character'
-  puts 'Pleaes specify the number of dice to roll (ie: 3)'
+  puts 'Please specify the number of dice to roll (ie: 3)'
   dice = gets.chomp
 end
-puts 'When you are ready to roll ' + dice + ', ' + sides + ' sided dice, press Enter.'
-waiting = gets.chomp # Just a placehoder until I find a better way to wait for user input.
+
 puts ''
+puts "When you are ready to roll #{dice}, #{sides} sided dice, press Enter."
+waiting = gets.chomp # Just a placeholder until I find a better way to wait for user input.
+
+puts 'Your roll:'
 dice_count = 1
 total = 0
 sides = sides.to_i
@@ -46,7 +50,8 @@ while dice_count <= dice
   dice_count += 1
   total += roll.to_i
 end
+
 puts ''
 #Calculate the total sum of all dice
-puts 'Total Score: ' + total.to_s 
+puts "Total Score: #{total}"
 puts ''
