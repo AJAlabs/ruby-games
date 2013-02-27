@@ -52,6 +52,6 @@ while dice_count <= dice
 end
 
 puts ''
-#Calculate the total sum of all dice
+# Calculate the total sum of all dice
 puts "Total Score: #{total}"
 puts ''
