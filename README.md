@@ -1,5 +1,7 @@
-RubyDice is a simple random dice generator
-========================================= 
+## Ruby-Games 
+### A collection of command-line games written in Ruby
+
+### RubyDice is a simple random dice generator
 
 It allows you to choose the number of dice and sides before the simulated roll.
 
