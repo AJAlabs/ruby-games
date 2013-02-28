@@ -24,3 +24,15 @@ When you are ready to roll 6, 6 sided dice, press Enter.
 6
 
 Total Score: 26
+
+
+### Dice Roller is an ASCII dice generator
+
+Example Output:
+````
+...........   ...........   ...........
+: *     * :   : *     * :   : *     * :
+: *     * :   :    *    :   :         :
+: *     * :   : *     * :   : *     * :
+'''''''''''   '''''''''''   '''''''''''
+````
