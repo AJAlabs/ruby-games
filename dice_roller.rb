@@ -26,7 +26,7 @@ while dice =~ /\D/ do
   dice = gets.chomp
 end
 puts ''
-puts "When you are ready to roll #{dice}, 6 sided dice, press Enter."
+puts "When you are ready to roll #{dice}, 6 sided dice, press any key:"
 waiting = gets.chomp 
 
 puts 'Your Roll:'
@@ -60,9 +60,9 @@ end
 
 puts ''
 # Display each dice in a numerical format.
-# TODO: Strip off the trailing , comma
+# .join(', ') is the best solution for displaying an comma separated array without a trailing comma
 print 'Your Roll: '
-all_dice.each {|x| print "#{x}, "}
+print all_dice.join(', ')
 
 # Calculate the total sum of all dice
 puts "\nTotal Score: #{total}"
