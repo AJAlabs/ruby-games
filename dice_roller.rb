@@ -3,42 +3,59 @@
 # Copyright (c) 2012 AJ Acevedo | http://ajacevedo.com
 # This content is released under the MIT License.
 # http://www.opensource.org/licenses/mit-license.php
-# Version: 0.2
+# Version: 0.2.1
 
-# Load the library files
+# Load the library files for ASCII dice and colors
 $LOAD_PATH << './lib'
 require 'dice.rb'
+require 'colorize.rb'
 
 # Start the program
 puts `clear`
 puts 'Dice Roller - Let\'s roll some dice!'
-puts 'How many 6 sided dice do you want to roll?'
-dice = gets.chomp
-while dice.empty? do
-  puts 'Number of dice not entered.'
-  puts 'How many 6 sided dice do you want to roll?'
-  dice = gets.chomp
+puts ''
+puts 'How many 6 sided dice do you want to roll?'.green
+@dice = nil
+@dice = gets.chomp
+
+# Begins the dice validation
+def dice_empty_validate
+  while @dice.empty? do
+    puts 'Number of dice not entered.'.red
+    puts 'How many 6 sided dice do you want to roll?'.green
+    @dice = nil
+    @dice = gets.chomp
+    dice_invalid_validate
+  end
 end
 
-while dice =~ /\D/ do
-  puts 'Invalid character'
-  puts 'Please specify the number of dice to roll (ie: 3)'
-  dice = gets.chomp
+def dice_invalid_validate
+  while @dice =~ /\D/ do
+    puts 'Invalid character'.red
+    puts 'Please specify the number of dice to roll (ie: 3)'.green
+    @dice = nil
+    @dice = gets.chomp
+    dice_empty_validate
+  end
 end
+
+dice_empty_validate
+dice_invalid_validate
+
 puts ''
-puts "When you are ready to roll #{dice}, 6 sided dice, press any key:"
+puts "When you are ready to roll #{@dice}, 6 sided dice, press any key:"
 waiting = gets.chomp 
 
 puts 'Your Roll:'
 puts ''
 
+# Here is the magic behind the dice roller
 dice_count = 1
 total = 0
-sides = 6
-dice = dice.to_i
+@dice = @dice.to_i
 all_dice = []
-while dice_count <= dice
-  roll = 1 + rand(sides)
+while dice_count <= @dice
+  roll = 1 + rand(6)
   case roll
     when 1
       roll_one
@@ -60,10 +77,10 @@ end
 
 puts ''
 # Display each dice in a numerical format.
-# .join(', ') is the best solution for displaying an comma separated array without a trailing comma
-print 'Your Roll: '
+# .join(', ') is the best solution for displaying a comma separated array without a trailing comma
+print 'Your Roll'.underline + ': '
 print all_dice.join(', ')
 
 # Calculate the total sum of all dice
-puts "\nTotal Score: #{total}"
+puts "\n\nTotal Score".underline + ': ' + "#{total}"
 puts ''
