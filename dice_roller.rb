@@ -5,65 +5,11 @@
 # http://www.opensource.org/licenses/mit-license.php
 # Version: 0.2
 
-# Defining the ASCII dice
-# Rolls a 1 on a D6 Dice
-def roll_one
-puts %Q{...........}
-puts %Q{:         :}
-puts %Q{:    *    :}
-puts %Q{:         :}
-puts %Q{'''''''''''}
-end
+# Load the library files
+$LOAD_PATH << './lib'
+require 'dice.rb'
 
-# Rolls a 2 on a D6 Dice
-def roll_two
-puts %Q{...........}
-puts %Q{: *       :}
-puts %Q{:         :}
-puts %Q{:       * :}
-puts %Q{'''''''''''}
-end
-
-# Rolls a 3 on a D6 Dice
-def roll_three
-puts %Q{...........}
-puts %Q{: *       :}
-puts %Q{:    *    :}
-puts %Q{:       * :}
-puts %Q{'''''''''''}
-end
-
-# Rolls a 4 on a D6 Dice
-def roll_four
-puts %Q{...........}
-puts %Q{: *     * :}
-puts %Q{:         :}
-puts %Q{: *     * :}
-puts %Q{'''''''''''}
-end
-
-# Rolls a 5 on a D6 Dice
-def roll_five
-puts %Q{...........}
-puts %Q{: *     * :}
-puts %Q{:    *    :}
-puts %Q{: *     * :}
-puts %Q{'''''''''''}
-end
-
-# Rolls a 6 on a D6 Dice
-def roll_six
-puts %Q{...........}
-puts %Q{: *     * :}
-puts %Q{: *     * :}
-puts %Q{: *     * :}
-puts %Q{'''''''''''}
-end
-
-#####################
-# Start the program #
-#####################
-
+# Start the program
 puts `clear`
 puts 'Dice Roller - Let\'s roll some dice!'
 puts 'How many 6 sided dice do you want to roll?'
@@ -90,6 +36,7 @@ dice_count = 1
 total = 0
 sides = 6
 dice = dice.to_i
+all_dice = []
 while dice_count <= dice
   roll = 1 + rand(sides)
   case roll
@@ -106,11 +53,17 @@ while dice_count <= dice
     when 6
       roll_six
   end
+  all_dice << roll
   dice_count += 1
   total += roll.to_i
 end
 
 puts ''
+# Display each dice in a numerical format.
+# TODO: Strip off the trailing , comma
+print 'Your Roll: '
+all_dice.each {|x| print "#{x}, "}
+
 # Calculate the total sum of all dice
-puts "Total Score: #{total}"
+puts "\nTotal Score: #{total}"
 puts ''
