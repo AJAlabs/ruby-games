@@ -3,7 +3,7 @@
 # Copyright (c) 2013 AJ Acevedo | http://ajacevedo.com
 # This content is released under the MIT License.
 # http://www.opensource.org/licenses/mit-license.php
-# Version: 0.2.2
+# Version: 0.2.3
 
 # Load the library files
 $LOAD_PATH << './lib'
