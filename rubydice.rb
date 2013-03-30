@@ -73,7 +73,7 @@ dice_empty_validate
 dice_invalid_validate
 
 puts ''
-puts "When you are ready to roll #{@dice}, #{@sides} sided dice, press any key:"
+puts "When you are ready to roll #{@dice}, #{@sides} sided dice, press Enter to continue:"
 waiting = gets.chomp
 
 # Here is the magic behind the dice generator
